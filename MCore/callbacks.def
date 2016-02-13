@@ -1,0 +1,29 @@
+LIBRARY "dawn"
+EXPORTS
+	Supports
+	Load
+	Unload
+	ProcessTick
+
+	;SAMP Callbacks
+	OnGameModeInit
+	OnGameModeExit
+	OnPlayerConnect
+	OnPlayerDisconnect
+	OnPlayerCommandText
+	OnDialogResponse
+	OnPlayerSpawn
+	OnPlayerRequestClass
+	OnPlayerText
+	OnPlayerRequestSpawn
+	;OnPlayerEditObject
+	;OnPlayerSelectObject
+	;OnPlayerPickUpPickup
+	OnPlayerInteriorChange
+	OnPlayerStateChange
+	OnPlayerKeyStateChange
+	OnPlayerDeath
+	OnVehicleDeath
+	
+	;plugin callbacks
+	OnPublicCall
