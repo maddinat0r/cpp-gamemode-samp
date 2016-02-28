@@ -1,0 +1,10 @@
+add_sources(
+	CInventory.cpp
+	CInventory.h
+	CItem.cpp
+	CItem.h
+	CItemHandler.cpp
+	CItemHandler.h
+	CItemProperties.cpp
+	CItemProperties.h
+)

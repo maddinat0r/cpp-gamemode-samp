@@ -1,0 +1,3 @@
+#pragma once
+
+#define DAWN_VERSION "@DAWN_VERSION@"

@@ -1,0 +1,9 @@
+add_sources(
+	CChar.cpp
+	CChar.h
+	CPlayer.h
+	CPlayerGame.h
+	Player-CB.cpp
+	Player-CMD.cpp
+	Player-Func.cpp
+)

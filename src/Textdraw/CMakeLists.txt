@@ -1,0 +1,11 @@
+add_sources(
+  CFadeableTextDraw.h
+  CPlayerTextDraw.cpp
+  CPlayerTextDraw.h
+  CTextDraw.cpp
+  CTextDraw.h
+  CTextDrawFade.cpp
+  CTextDrawFade.h
+  CTextDrawMenu.cpp
+  CTextDrawMenu.h
+)
