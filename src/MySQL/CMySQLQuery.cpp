@@ -41,6 +41,7 @@ SqlResult *CMySQLQuery::Execute(MYSQL *mysql_connection)
 		int error_id = mysql_errno(mysql_connection);
 		string error_str(mysql_error(mysql_connection));
 
+		printf("MySQL query error:(error #%d) %s", error_id, error_str.c_str());
 		//CLog::Get()->LogFunction(LOG_ERROR, log_funcname, "(error #%d) %s", error_id, error_str.c_str());
 	}
 	return result;

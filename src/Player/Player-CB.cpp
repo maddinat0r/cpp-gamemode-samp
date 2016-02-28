@@ -204,7 +204,7 @@ void Player_OnPlayerConnect(int playerid)
 											"VALUES ('{:s}', '{:s}', '{:s}', '{:s}', '{:d}', '{:d}', '{:d}')",
 											name_esc, password_hash, first_name_esc, last_name_esc,
 											static_cast<unsigned int>(player->Gender), player->GetSkin(), player->Inventory->GetId()
-											);
+										);
 										auto register_query = CMySQLQuery::Create(std::move(reg_query_str));
 										register_query->SetCallback([=](SqlResult *res)
 										{

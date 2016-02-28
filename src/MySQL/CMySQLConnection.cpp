@@ -191,7 +191,9 @@ void CMySQLConnection::ProcessQueries()
 						Disconnect();
 						Connect();
 					}
-					m_QueryQueue.push(query); //push failed query again back
+					//TODO: only makes sense if connection/server is having network trouble like lag
+					//TODO: check for appropriate error codes here
+					//m_QueryQueue.push(query); //push failed query back again
 				}
 				else
 				{
