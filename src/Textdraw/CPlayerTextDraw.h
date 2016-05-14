@@ -1,6 +1,6 @@
 #pragma once
 
-#include <TextDraw/CFadeableTextDraw.h>
+#include <Textdraw/CFadeableTextDraw.h>
 
 #include <sampgdk/a_samp.h>
 #include <sampgdk/a_players.h>

@@ -9,7 +9,7 @@
 #include <System/format.h>
 
 
-bool CMD_setweather(CPlayer *player, char *params) 
+bool CMD_setweather(CPlayer *player, const char *params) 
 {
 	if(!player->Spawned) 
 		return 0;
@@ -25,7 +25,7 @@ bool CMD_setweather(CPlayer *player, char *params)
 	return 1;
 }
 
-bool CMD_setadmin(CPlayer *player, char *params) 
+bool CMD_setadmin(CPlayer *player, const char *params) 
 {
 	if(!player->Spawned) 
 		return 1;
@@ -54,7 +54,7 @@ bool CMD_setadmin(CPlayer *player, char *params)
 	return 1;
 }
 
-bool CMD_editplayer(CPlayer *player, char *params) 
+bool CMD_editplayer(CPlayer *player, const char *params) 
 {
 	if(player->AdminLevel <= 3) 
 		return 1;
@@ -414,7 +414,7 @@ bool CMD_editplayer(CPlayer *player, char *params)
 	return true;
 }
 
-bool CMD_inventory(CPlayer *player, char *params) //TODO: check this function!!
+bool CMD_inventory(CPlayer *player, const char *params) //TODO: check this function!!
 {
 	if(!player->Spawned)
 		return 0;

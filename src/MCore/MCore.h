@@ -56,13 +56,13 @@ public: //constructor / destructor
 public: //functions
 
 	//command System
-	using CommandFunc =  bool(*)(CPlayer*, char*);
+	using CommandFunc =  bool(*)(CPlayer*, const char*);
 
 	inline void AddCommand(string name, CommandFunc cmdfunc)
 	{
 		m_CommandMap.insert({ name, cmdfunc });
 	}
-	bool CallCommand(CPlayer *player, char* name, char* params = "");
+	bool CallCommand(CPlayer *player, const char* name, const char* params = "");
 
 
 	//dialog system

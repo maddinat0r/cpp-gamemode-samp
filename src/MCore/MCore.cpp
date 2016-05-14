@@ -3,7 +3,7 @@
 #include <Player/CPlayer.h>
 
 
-bool MCore::CallCommand(CPlayer* player, char* name, char* params) 
+bool MCore::CallCommand(CPlayer* player, const char* name, const char* params) 
 {
 	if(m_CommandMap.find(name) != m_CommandMap.end()) 
 		return m_CommandMap.at(name)(player, params);

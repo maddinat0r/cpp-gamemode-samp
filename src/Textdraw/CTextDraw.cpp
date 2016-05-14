@@ -1,5 +1,5 @@
 #include <Textdraw/CTextDraw.h>
-#include <TextDraw/CTextDrawFade.h>
+#include <Textdraw/CTextDrawFade.h>
 
 
 void CTextDraw::FadeIn(unsigned int playerid, function<void()> func, unsigned int steps)

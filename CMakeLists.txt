@@ -33,8 +33,6 @@ include_directories(${Boost_INCLUDE_DIR})
 if(MSVC)
 	#needed for Boost's auto-link feature
 	link_directories(${BOOST_LIBRARYDIR})
-else()
-	target_link_libraries(mysql ${Boost_LIBRARIES})
 endif()
 
 
@@ -42,34 +40,38 @@ find_package(MySQLCAPI 5.5.40 REQUIRED)
 include_directories(${MYSQLCAPI_INCLUDE_DIR})
 
 
-set(YAML_CPP_ROOT "${YAML_CPP_ROOT}" CACHE PATH "Path to yaml-cpp")
-if(NOT YAML_CPP_ROOT)
-	message(FATAL_ERROR "YAML-CPP path required")
-endif()
-find_library(
-	YAML_CPP_LIBRARY
-	NAMES
-	"libyaml-cppmd.lib"
-	HINTS
-	${YAML_CPP_ROOT}
-	PATH_SUFFIXES
-	lib
-)
-if(NOT YAML_CPP_LIBRARY)
-	message(FATAL_ERROR "Could not find libyaml-cppmd.lib")
+if(MSVC)
+	set(YAML_CPP_ROOT "${YAML_CPP_ROOT}" CACHE PATH "Path to yaml-cpp")
+	if(NOT YAML_CPP_ROOT)
+		message(FATAL_ERROR "YAML-CPP path required")
+	endif()
+	find_library(
+		YAML_CPP_LIBRARY
+		NAMES
+		"libyaml-cppmd.lib"
+		HINTS
+		${YAML_CPP_ROOT}
+		PATH_SUFFIXES
+		lib
+	)
+	if(NOT YAML_CPP_LIBRARY)
+		message(FATAL_ERROR "Could not find libyaml-cppmd.lib")
+	endif()
+else()
+	find_library(yaml-cpp REQUIRED)
 endif()
 include_directories("${YAML_CPP_ROOT}/include")
 
 
-set(CRYPTOPP_INCLUDE "${CRYPTOPP_INCLUDE}" CACHE PATH "Path to cryptopp include directory")
-if(NOT CRYPTOPP_INCLUDE)
-	message(FATAL_ERROR "Cryptopp include path required")
-endif()
-set(CRYPTOPP_LIBRARY "${CRYPTOPP_LIBRARY}" CACHE FILEPATH "Filepath to cryptopp library")
-if(NOT CRYPTOPP_LIBRARY)
-	message(FATAL_ERROR "Cryptopp library filepath required")
-endif()
-include_directories(${CRYPTOPP_INCLUDE})
+#set(CRYPTOPP_INCLUDE "${CRYPTOPP_INCLUDE}" CACHE PATH "Path to cryptopp include directory")
+#if(NOT CRYPTOPP_INCLUDE)
+#	message(FATAL_ERROR "Cryptopp include path required")
+#endif()
+#set(CRYPTOPP_LIBRARY "${CRYPTOPP_LIBRARY}" CACHE FILEPATH "Filepath to cryptopp library")
+#if(NOT CRYPTOPP_LIBRARY)
+#	message(FATAL_ERROR "Cryptopp library filepath required")
+#endif()
+#include_directories(${CRYPTOPP_INCLUDE})
 
 
 set(SAMP_SDK_ROOT "${PROJECT_SOURCE_DIR}/libs/sdk")

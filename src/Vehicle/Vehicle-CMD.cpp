@@ -18,7 +18,7 @@
 
 
 
-bool CMD_createveh(CPlayer *Player, char *params) 
+bool CMD_createveh(CPlayer *Player, const char *params) 
 {
 	if(Player->AdminLevel <= 3) 
 		return 1;
@@ -72,7 +72,7 @@ bool CMD_createveh(CPlayer *Player, char *params)
 	return 1;
 }
 
-bool CMD_editveh(CPlayer *player, char *params) 
+bool CMD_editveh(CPlayer *player, const char *params) 
 {
 	if(player->AdminLevel <= 3) 
 		return 1;

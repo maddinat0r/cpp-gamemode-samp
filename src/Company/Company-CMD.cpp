@@ -7,7 +7,7 @@
 #include <System/format.h>
 
 
-bool CMD_editcompany(CPlayer *player, char *params) 
+bool CMD_editcompany(CPlayer *player, const char *params) 
 {
 	if(player->Spawned == false)
 		return false;

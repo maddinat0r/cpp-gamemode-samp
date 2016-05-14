@@ -1,8 +1,10 @@
-#include <TextDraw/CTextDrawFade.h>
-#include <TextDraw/CFadeableTextDraw.h>
+#include <Textdraw/CTextDrawFade.h>
+#include <Textdraw/CFadeableTextDraw.h>
 #include <System/CTimer.h>
 
 #include <sampgdk/a_samp.h>
+
+#include <cmath>
 
 
 struct CTextDrawFadeHandler::SFade

@@ -53,7 +53,13 @@ add_samp_plugin(dawn
 	${_SOURCEFILES}
 )
 
+add_library(mysql-client STATIC IMPORTED)
+set_property(TARGET mysql-client PROPERTY IMPORTED_LOCATION ${MYSQLCAPI_LIBRARY})
+
 # link dependencies
-target_link_libraries(dawn sampgdk4d ${MYSQLCAPI_LIBRARY} ${YAML_CPP_LIBRARY})# ${CRYPTOPP_LIBRARY})
+target_link_libraries(dawn sampgdk mysql-client ${YAML_CPP_LIBRARY})# ${CRYPTOPP_LIBRARY})
+if(NOT MSVC)
+	target_link_libraries(dawn ${Boost_LIBRARIES})
+endif()
 
 install(TARGETS dawn DESTINATION "plugins/")

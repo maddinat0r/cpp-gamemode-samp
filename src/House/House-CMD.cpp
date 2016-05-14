@@ -13,7 +13,7 @@
 #include <memory>
 
 
-bool CMD_createhouse(CPlayer *player, char *params) 
+bool CMD_createhouse(CPlayer *player, const char *params) 
 {
 	if(player->AdminLevel < 4)
 		return 1;
@@ -89,7 +89,7 @@ bool CMD_createhouse(CPlayer *player, char *params)
 	return 1;
 }
 
-bool CMD_edithouse(CPlayer *player, char *params) 
+bool CMD_edithouse(CPlayer *player, const char *params) 
 {
 	if(player->AdminLevel < 4) 
 		return 1;
